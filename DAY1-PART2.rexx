@@ -43,17 +43,14 @@ DO I = 1 TO INREC.0
     END                                        
   END                                          
   outstring = INREC.I                          
-  IF loIndex <> 2147483647 THEN                  
-    outstring = OVERLAY(loNum,outstring,loIndex) 
-  outstring = TRANSLATE(outstring,'',alpha)      
-  outstring = STRIP(outstring)                   
-  firstNum  = SUBSTR(outstring,1,1)              
-  IF hiIndex <> 0 THEN                           
-    outstring = OVERLAY(hiNum,INREC.I,hiIndex)   
-  outstring = TRANSLATE(outstring,'',alpha)      
-  outstring = STRIP(outstring)                   
-  outstring = REVERSE(outstring)                 
-  lastNum   = SUBSTR(outstring,1,1)              
+  IF loIndex <> 2147483647 THEN                       
+    outstring = OVERLAY(loNum,outstring,loIndex)      
+  outstring = STRIP(TRANSLATE(outstring,'',alpha))    
+  firstNum  = SUBSTR(outstring,1,1)                   
+  IF hiIndex <> 0 THEN                                
+    outstring = OVERLAY(hiNum,INREC.I,hiIndex)        
+  outstring = STRIP(TRANSLATE(outstring,'',alpha))    
+  lastNum   = SUBSTR(REVERSE(outstring),1,1)                      
                                                  
   sum = firstNum||lastNum                        
   total = total + sum                            
