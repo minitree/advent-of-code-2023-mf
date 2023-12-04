@@ -28,20 +28,18 @@ DO I = 1 TO INREC.0
   hiIndex = 0                                  
   loNum = ""                                   
   hiNum = ""                                   
-  DO J = 1 TO 9                                
-    numIndex.J = POS(numSpelled.J,input)       
-    IF numIndex.J <> 0 THEN DO                 
-      IF numIndex.J < loIndex THEN DO          
-        loIndex = numIndex.J                   
-        loNum   = J                            
-      END                                      
-    END                                        
-    numIndex.J = LASTPOS(numSpelled.J,input)   
-    IF numIndex.J > hiIndex THEN DO            
-      hiIndex = numIndex.J                     
-      hiNum   = J                              
-    END                                        
-  END                                          
+  DO J = 1 TO 9                                       
+    numIndex.J = POS(numSpelled.J,input)              
+    IF numIndex.J <> 0 & numIndex.J < loIndex THEN DO 
+      loIndex = numIndex.J                            
+      loNum   = J                                     
+    END                                               
+    numIndex.J = LASTPOS(numSpelled.J,input)          
+    IF numIndex.J > hiIndex THEN DO                   
+      hiIndex = numIndex.J                            
+      hiNum   = J                                     
+    END                                               
+  END                                                                                       
   outstring = INREC.I                          
   IF loIndex <> 2147483647 THEN                       
     outstring = OVERLAY(loNum,outstring,loIndex)      
