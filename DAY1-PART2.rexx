@@ -56,5 +56,6 @@ END
                                                  
 SAY "The answer:" total                                                                 
                                                  
-/* bye */                                        
+/* bye */                   
+"FREE FI(INDD)"
 EXIT 0                                           
