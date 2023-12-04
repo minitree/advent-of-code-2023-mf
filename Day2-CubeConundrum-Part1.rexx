@@ -30,9 +30,7 @@ DO I = 1 TO INREC.0
       IF DATATYPE(word) = "NUM" THEN DO                                 
         nextWord = WORD(cleanIn,Y+1)                                    
         valueStem = BALLS.nextWord                                    
-        IF word > valueStem THEN DO                                    
-          gamePass = 0                                                
-        END                                                          
+        IF word > valueStem THEN gamePass = 0                                                                                            
       END                                                             
     END                                                                
   END                                                                
