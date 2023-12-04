@@ -56,8 +56,7 @@ DO I = 1 TO INREC.0
   total = total + sum                            
 END                                              
                                                  
-SAY "The answer:"                                
-SAY total                                        
+SAY "The answer:" total                                                                 
                                                  
 /* bye */                                        
 EXIT 0                                           
