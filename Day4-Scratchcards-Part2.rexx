@@ -1,5 +1,5 @@
 /* Rexx */                                                 
-SAY "This solves Day 4 Part 1"                             
+SAY "This solves Day 4 Part 2"                             
                                                            
 /* read the file */                                        
 fname = "AOC1EB.DAY4IN"                                    
