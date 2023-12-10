@@ -43,8 +43,7 @@ DO I = 1 TO INREC.0
           numDigits = numDigits + 1                           
         END                                                   
       END                                                     
-    currentDigit = firstDigit||secondDigit||thirdDigit        
-/* SAY "Current Digit" currentDigit */                      
+    currentDigit = firstDigit||secondDigit||thirdDigit                             
    good    = 0                                              
    sumGood = 0                                              
    END                                                      
@@ -57,8 +56,7 @@ DO I = 1 TO INREC.0
        good = 1                                             
        loc = I||";"||Jn                                     
        IF WORDPOS(loc,gearLocs) = 0 THEN                    
-         gearLocs = gearLocs||" "loc                        
-     /*SAY "coordinates of gears:" gearLocs*/               
+         gearLocs = gearLocs||" "loc                                    
      END                                                    
      /* right */                                            
      Jn = J+1                                               
@@ -119,24 +117,20 @@ DO I = 1 TO INREC.0
         loc = In||";"||Jn                                
         IF WORDPOS(loc,gearLocs) = 0 THEN                
           gearLocs = gearLocs||" "In||";"||Jn            
-      END                                                
-   /* SAY "Current Digit goodness" good                  
-      SAY "Intermediate result" answer  */               
+      END                                                          
       IF good = 1 THEN sumGood = sumGood + good          
       IF numDigits = 0 & sumGood > 0 THEN DO             
         IF WORDPOS(gearLocs,allGearLocs) > 0 THEN DO     
           fetchedPair = gearNumbers.gearLocs             
           product = fetchedPair * currentDigit           
           answer = answer + product                      
-        END                                              
-    /*  SAY "Adding gears" gearLocs  */                  
+        END                                                             
         gearNumbers.gearLocs = currentDigit              
         allGearLocs = allGearLocs||" "||gearLocs         
         gearLocs = ""                                    
       END                                                
       good = 0                                           
-    END                                                  
- /* SAY allGearLocs */        
+    END                                                      
   END                         
 END                           
                               
