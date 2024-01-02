@@ -46,8 +46,7 @@ assign = "boxes."iii" = boxes."iii" || charLabel || ' ' || power || ' '"
       charLen  = LENGTH(charLabel)                                      
       nextPower = SUBSTR(firstStr,J+1,1)                                
       charLen2 = charLabel || " " || nextPower                          
-      boxing = OVERLAY(charLen2,boxing,position2,charLen+2)             
-      INTERPRET "boxes2."iii"=boxing"                                   
+      boxing = OVERLAY(charLen2,boxing,position2,charLen+2)                                           
       INTERPRET "boxes."iii"=boxing"                                    
     END                                                                 
     END           
@@ -59,14 +58,12 @@ assign = "boxes."iii" = boxes."iii" || charLabel || ' ' || power || ' '"
         position = WORDPOS(charLabel,boxing)                            
         position2 = WORDINDEX(boxing,position)                          
         charLen  = LENGTH(charLabel)                                    
-        boxing = OVERLAY(" ",boxing,position2,charLen+2," ")            
-        INTERPRET "boxes2."iii"=boxing"                                 
+        boxing = OVERLAY(" ",boxing,position2,charLen+2," ")                                          
         INTERPRET "boxes."iii"=boxing"                                  
       END                                                               
     END                                                                 
   END                                                                   
-  IF powerin = "YES" THEN INTERPRET assign                              
-/*SAY INRECOT.ind charLabel operation power*/                           
+  IF powerin = "YES" THEN INTERPRET assign                                                    
 END                                                                     
                                                                         
 DO K = 0 TO 255                                                         
